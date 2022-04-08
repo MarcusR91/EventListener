@@ -25,6 +25,7 @@ nav{
     padding: 30px 15px;
     transition: 500ms;
     text-transform: uppercase;
+    margin-right: 15px;
 }
 .button:hover{
     cursor: pointer;
