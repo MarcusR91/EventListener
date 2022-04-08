@@ -23,11 +23,11 @@ export const renderBussinesPlan = () => {
         </div>
         <h3>Mål</h3>
         <div id = "myPlan">
-            <ul>
+            <ol>
                 <li>Bygga och etablera en plattform som ska öka mängden spelningar en artist får per år med 20-30%.</li>
                 <li>Minska tiden det tar att styra upp event med 20%.</li>
                 <li>Vi ska ha 200 prenumeranter inom ett år efter lansering.</li>
-            </ul>
+            </ol>
         </div>
         <h3>Omfattning</h3>
         <div id = "myPlan">
