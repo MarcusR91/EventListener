@@ -29,11 +29,6 @@ export const renderBussinesPlan = () => {
                 <li>Vi ska ha 200 prenumeranter inom ett år efter lansering.</li>
             </ol>
         </div>
-        <h3>Omfattning</h3>
-        <div id = "myPlan">
-            <p>Resultatet projektet ska producera är en digital plattform som används av musiker, arrangörer och även 
-            allmänheten som vill gå och se på event. Resultatet innebär att arrangörer kan lägga ut event med biljett 
-            försäljning och för artister att komma i kontakt med olika arrangörer.
-        </div>
+       
     `;
 }
