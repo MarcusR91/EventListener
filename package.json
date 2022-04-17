@@ -1,0 +1,26 @@
+{
+  "name": "eventlistener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "dependencies": {
+    "parcel": "^2.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "parcel public/app.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcusR91/EventListener.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcusR91/EventListener/issues"
+  },
+  "homepage": "https://github.com/MarcusR91/EventListener#readme"
+}
