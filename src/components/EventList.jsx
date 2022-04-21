@@ -1,22 +1,28 @@
-// import React from 'react';
+import EventItems from "./EventItems";
 
-// const EventList = (props) => {
-//     if(props.items.length === 0){
-//         return <h3>No current events! :(</h3>
-//     }
+const EventList = (props) => {
 
-//     return (
-//         <ul>
-//             {props.items.map((events) => (
-//                 <EventItem 
-//                 artist = {events.artist}
-//                 location = {events.location}
-//                 info = {events.info}
-//                 price = {events.price}                    
-//                 />
-//             ))}
-//         </ul>
-//     )
-// }
+    return (
+        <>
+            {props.events.length > 0 &&
+                
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Artist</th>
+                                <th>Location</th>
+                                <th>Info</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <EventItems events={props.events} />
+                        </tbody>
+                    </table>
+                }
+            {props.events.length < 1 && <p>No events added</p>}
+        </>
+    )
+}
 
-// export default EventList;
+export default EventList;
