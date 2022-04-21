@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Header from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
-
+import './App.css';
 import StartPrototype from "./components/StartPrototype.jsx";
 import EventList from "./components/EventList.jsx";
 

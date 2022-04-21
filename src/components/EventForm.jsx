@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './style/EventForm.css';
 // import View from './View';
 import EventList from './EventList';
 
@@ -56,35 +57,38 @@ const EventForm = (props) => {
     }, [events])
 
     return (
-        <div>
-            <form onSubmit={submitHandler} >
+        <>
+            <div className='event-form-container'>
+                <form onSubmit={submitHandler} className="event-form" >
+                    <div className='form-label'>
+                        <label>Artist</label>
+                        <input type="text" value={artist} onChange={artistChangeHandler} />
+                    </div>
+                    <div className='form-label'>
+                        <label>Location</label>
+                        <input type="text" value={location} onChange={locationChangeHandler} />
+                    </div >
+                    <div className='form-label'>
+                        <label>Info</label>
+                        <textarea type="text" value={info} onChange={infoChangeHandler} />
+                    </div>
+                    <div className='form-label'>
+                        <label>Price</label>
+                        <input type="number" value={price} onChange={priceChangeHandler} />
+                    </div>
+                    <div className='form-button'>
+                        <button type='submit'>Add</button>
+                    </div>
+                    <div>
+                        <button onClick={props.onCancel}>Stop Prototype</button>
+                    </div>
+                </form>
                 <div>
-                    <label>Artist</label>
-                    <input type="text" value={artist} onChange={artistChangeHandler} />
-                </div>
-                <div>
-                    <label>Location</label>
-                    <input type="text" value={location} onChange={locationChangeHandler} />
-                </div>
-                <div>
-                    <label>Info</label>
-                    <textarea type="text" value={info} onChange={infoChangeHandler} />
-                </div>
-                <div>
-                    <label>Price</label>
-                    <input type="number" value={price} onChange={priceChangeHandler} />
-                </div>
-                <div>
-                    <button type='submit'>Add</button>
-                </div>
-                <div>
-                    <button onClick={props.onCancel}>Stop Prototype</button>
-                </div>
-            </form>
-            <div>
                 <EventList events={events} />
             </div>
-        </div>
+            </div>
+            
+        </>
     );
 };
 
