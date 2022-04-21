@@ -1,6 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+// import View from './View';
+import EventList from './EventList';
 
 const EventForm = (props) => {
+
+    const getDatafromLS = () => {
+        const data = localStorage.getItem('events');
+        if (data) {
+            return JSON.parse(data);
+        }
+        else {
+            return []
+        }
+    }
+
+    const [events, setEvents] = useState(getDatafromLS());
 
     const [artist, setArtist] = useState('');
     const [location, setLocation] = useState('');
@@ -23,42 +37,54 @@ const EventForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
 
-        const eventData = {
-            artist: artist,
-            location: location, 
-            info: info,
-            price: price
+        let eventData = {
+            artist,
+            location,
+            info,
+            price
         }
-        console.log(eventData);
-        localStorage.setItem('eventdata', JSON.stringify(eventData));
+        setEvents([...events, eventData]);
+        setArtist('');
+        setLocation('');
+        setInfo('');
+        setPrice('');
 
-        // props.saveEventData(eventData);
     }
+
+    useEffect(() => {
+        localStorage.setItem('events', JSON.stringify(events));
+    }, [events])
+
     return (
-        <form onSubmit={submitHandler}>
         <div>
-            <label>Artist</label>
-            <input type = "text" value={artist} onChange={artistChangeHandler} />
+            <form onSubmit={submitHandler} >
+                <div>
+                    <label>Artist</label>
+                    <input type="text" value={artist} onChange={artistChangeHandler} />
+                </div>
+                <div>
+                    <label>Location</label>
+                    <input type="text" value={location} onChange={locationChangeHandler} />
+                </div>
+                <div>
+                    <label>Info</label>
+                    <textarea type="text" value={info} onChange={infoChangeHandler} />
+                </div>
+                <div>
+                    <label>Price</label>
+                    <input type="number" value={price} onChange={priceChangeHandler} />
+                </div>
+                <div>
+                    <button type='submit'>Add</button>
+                </div>
+                <div>
+                    <button onClick={props.onCancel}>Stop Prototype</button>
+                </div>
+            </form>
+            <div>
+                <EventList events={events} />
+            </div>
         </div>
-        <div>
-            <label>Location</label>
-            <input type = "text" value={location} onChange={locationChangeHandler} />
-        </div>
-        <div>
-            <label>Info</label>
-            <textarea type = "text" value={info} onChange={infoChangeHandler} />
-        </div>
-        <div>
-            <label>Price</label>
-            <input type = "number" value={price} onChange={priceChangeHandler} />
-        </div>
-        <div>
-            <button type='submit'>Add</button>
-        </div>
-        <div>
-            <button onClick={props.onCancel}>Stop Prototype</button>
-        </div>
-    </form>
     );
 };
 

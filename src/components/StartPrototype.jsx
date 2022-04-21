@@ -10,18 +10,11 @@ const StartPrototype = () => {
     const stopPrototype = () => {
         setIsEditing(false);
     }
-    const saveEventData = (eneteredEventData) => {
-        const eventData = {
-            ...eneteredEventData
-        };
-        props.onAddEvent(eventData);
-        setIsEditing(false);
-    }
 
     return (
         <>
             {!isEditing && <button onClick={startPrototype}>Start Prototype</button>}
-            {isEditing && <EventForm onCancel={stopPrototype} saveEventData = {saveEventData} />}
+            {isEditing && <EventForm onCancel={stopPrototype}  />}
         </>
     )
 }
