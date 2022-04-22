@@ -58,35 +58,39 @@ const EventForm = (props) => {
 
     return (
         <>
-            <div className='event-form-container'>
+            {/* <div className='event-form-container'> */}
                 <form onSubmit={submitHandler} className="event-form" >
+                    <div className='form-title'>
+                        <h2>New Event</h2>
+                    </div>
                     <div className='form-label'>
                         <label>Artist</label>
-                        <input type="text" value={artist} onChange={artistChangeHandler} />
+                        <input type="text" value={artist} onChange={artistChangeHandler} required />
                     </div>
                     <div className='form-label'>
                         <label>Location</label>
-                        <input type="text" value={location} onChange={locationChangeHandler} />
+                        <input type="text" value={location} onChange={locationChangeHandler} required />
                     </div >
                     <div className='form-label'>
                         <label>Info</label>
-                        <textarea type="text" value={info} onChange={infoChangeHandler} />
+                        <textarea type="text" value={info} onChange={infoChangeHandler} required />
                     </div>
                     <div className='form-label'>
                         <label>Price</label>
-                        <input type="number" value={price} onChange={priceChangeHandler} />
+                        <input type="number" value={price} onChange={priceChangeHandler} required />
                     </div>
-                    <div className='form-button'>
-                        <button type='submit'>Add</button>
+                    <div className='form-button-container'>
+                        <button className='form-button' type='submit' >Add event</button>
                     </div>
-                    <div>
-                        <button onClick={props.onCancel}>Stop Prototype</button>
+                    <div className='stop-prototyp-container'>
+                        <button className='stop-prototype' onClick={props.onCancel}>Stop Prototype</button>
                     </div>
                 </form>
+                
                 <div>
                 <EventList events={events} />
             </div>
-            </div>
+            {/* </div> */}
             
         </>
     );

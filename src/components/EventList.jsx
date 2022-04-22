@@ -3,7 +3,7 @@ import EventItems from "./EventItems";
 const EventList = (props) => {
 
     return (
-        <>
+         <div className="event-info">
             {props.events.length > 0 &&
                 
                     <table>
@@ -20,8 +20,10 @@ const EventList = (props) => {
                         </tbody>
                     </table>
                 }
+                
             {props.events.length < 1 && <p>No events added</p>}
-        </>
+            </div>
+        
     )
 }
 
