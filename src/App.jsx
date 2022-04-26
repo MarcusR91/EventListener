@@ -4,13 +4,21 @@ import { Footer } from "./components/Footer.jsx";
 import './App.css';
 import StartPrototype from "./components/StartPrototype.jsx";
 import EventList from "./components/EventList.jsx";
+import { NavBar } from "./components/Nav/NavBar.jsx";
+import { Routes, Route } from "react-router-dom";
+import { routes } from "./components/Nav/route-config.js";
 
 
 
 export const App = () => {
     return (
         <div>
-            <Header />
+            <NavBar />
+            <Routes>
+                {routes.map(route =>
+                    <Route key = {route.path} path = {route.path} element = {<route.component />}/>
+                    )}
+            </Routes>
             <StartPrototype  />
             <Footer />
         </div>
