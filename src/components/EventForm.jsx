@@ -86,10 +86,8 @@ const EventForm = (props) => {
                         <button className='stop-prototype' onClick={props.onCancel}>Stop Prototype</button>
                     </div>
                 </form>
+                {/* <EventList events={events} /> */}
                 
-                <div>
-                <EventList events={events} />
-            </div>
             {/* </div> */}
             
         </>

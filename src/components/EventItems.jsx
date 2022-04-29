@@ -1,17 +1,40 @@
-
+import React, { useEffect, useState } from "react";
+import caller from "../API/Caller";
 
 const EventItems= (props) => {
 
-    return props.events.map((events, index)=>( 
+    const [data,setData] = useState([]);
 
-        <tr key={index}>
-            <td>{events.artist}</td>
-            <td>{events.location}</td>
-            <td>{events.info}</td>
-            <td>{events.price}</td>
-        </tr>            
 
-    ))
+   function getEventData() {
+        caller.get('/1Y0gpL/data', {})
+        .then(res => {
+            const data = res.data;
+            
+            console.log(data);
+            setData(data);
+        })
+        .catch((error) =>{
+            console.error(error);
+        })
+    }
+    useEffect(()=>{
+        getEventData();
+    },[])
+
+
+    return (
+        <>
+            {data.map(event =>
+                <tr key= {event.id}>
+                    <td>{event.Artist}</td> 
+                    <td>{event.Location}</td>
+                    <td>{event.Price}</td>
+                    </tr>
+                    
+                )}
+        </>
+      )
 
 }
 
