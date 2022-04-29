@@ -1,60 +1,92 @@
 import React, { useState, useEffect } from 'react';
+
 import './style/EventForm.css';
+import Button from './utils/Button';
 // import View from './View';
 import EventList from './EventList';
+import caller from '../API/Caller';
 
 const EventForm = (props) => {
 
-    const getDatafromLS = () => {
-        const data = localStorage.getItem('events');
-        if (data) {
-            return JSON.parse(data);
-        }
-        else {
-            return []
-        }
-    }
 
-    const [events, setEvents] = useState(getDatafromLS());
+    // const getDatafromLS = () => {
+    //     const data = localStorage.getItem('events');
+    //     if (data) {
+    //         return JSON.parse(data);
+    //     }
+    //     else {
+    //         return []
+    //     }
+    // }
 
-    const [artist, setArtist] = useState('');
-    const [location, setLocation] = useState('');
-    const [info, setInfo] = useState('');
-    const [price, setPrice] = useState('');
+    // const [events, setEvents] = useState(getDatafromLS());
+    const [newEvent, setNewEvent] = useState({
+        artist: '',
+        location:'',
+        price: null
+    })
 
-    const artistChangeHandler = (event) => {
-        setArtist(event.target.value);
-    }
-    const locationChangeHandler = (event) => {
-        setLocation(event.target.value);
-    }
-    const infoChangeHandler = (event) => {
-        setInfo(event.target.value);
-    }
-    const priceChangeHandler = (event) => {
-        setPrice(event.target.value);
-    }
+    // const [artist, setArtist] = useState('');
+    // const [location, setLocation] = useState('');
+    // const [info, setInfo] = useState('');
+    // const [price, setPrice] = useState('');
+
+    // const artistChangeHandler = (event) => {
+    //     setArtist(event.target.value);
+    // }
+    // const locationChangeHandler = (event) => {
+    //     setLocation(event.target.value);
+    // }
+    // const infoChangeHandler = (event) => {
+    //     setInfo(event.target.value);
+    // }
+    // const priceChangeHandler = (event) => {
+    //     setPrice(event.target.value);
+    // }
 
     const submitHandler = (event) => {
         event.preventDefault();
 
-        let eventData = {
-            artist,
-            location,
-            info,
-            price
-        }
-        setEvents([...events, eventData]);
-        setArtist('');
-        setLocation('');
-        setInfo('');
-        setPrice('');
+        caller.post('/1Y0gpL/data',{
+            artist: newEvent.artist,
+            location: newEvent.location, 
+            price: newEvent.price
+        })
+        .then(res => {
+
+            const data = res.data;
+
+            console.log(res.data)
+            setNewEvent(data)
+            
+            
+        })
+
+        // let eventData = {
+        //     artist,
+        //     location,
+        //     info,
+        //     price
+        // }
+        // setEvents([...events, eventData]);
+        // setArtist('');
+        // setLocation('');
+        // setInfo('');
+        // setPrice('');
 
     }
 
-    useEffect(() => {
-        localStorage.setItem('events', JSON.stringify(events));
-    }, [events])
+    function handle(e){
+        const newData = {...newEvent}
+        newData[e.target.id] = e.target.value;
+        setNewEvent(newData);
+        console.log(newData);
+       
+    }
+
+    // useEffect(() => {
+    //     localStorage.setItem('events', JSON.stringify(events));
+    // }, [events])
 
     return (
         <>
@@ -65,22 +97,22 @@ const EventForm = (props) => {
                     </div>
                     <div className='form-label'>
                         <label>Artist</label>
-                        <input type="text" value={artist} onChange={artistChangeHandler} required />
+                        <input onChange={(e) => handle(e)} id='artist' type="text" value={newEvent.artist}  required />
                     </div>
                     <div className='form-label'>
                         <label>Location</label>
-                        <input type="text" value={location} onChange={locationChangeHandler} required />
+                        <input  onChange={(e) => handle(e)} id='location' type="text" value={newEvent.location}  required />
                     </div >
-                    <div className='form-label'>
+                    {/* <div className='form-label'>
                         <label>Info</label>
                         <textarea type="text" value={info} onChange={infoChangeHandler} required />
-                    </div>
+                    </div> */}
                     <div className='form-label'>
                         <label>Price</label>
-                        <input type="number" value={price} onChange={priceChangeHandler} required />
+                        <input  onChange={(e) => handle(e)} id='price' type="number" value={newEvent.price} required />
                     </div>
                     <div className='form-button-container'>
-                        <button className='form-button' type='submit' >Add event</button>
+                       <Button type = "submit" className = "form-button">Add Event</Button>
                     </div>
                     <div className='stop-prototyp-container'>
                         <button className='stop-prototype' onClick={props.onCancel}>Stop Prototype</button>

@@ -1,4 +1,5 @@
 import EventItems from "./EventItems";
+import Button from "./utils/Button";
 
 const EventList = (props) => {
 
@@ -16,6 +17,7 @@ const EventList = (props) => {
                         </thead>
                         <tbody>
                             <EventItems />
+                           
                         </tbody>
                     </table>
                 {/* } */}

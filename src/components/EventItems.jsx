@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Button from "./utils/Button";
 import caller from "../API/Caller";
 
 const EventItems= (props) => {
@@ -27,11 +28,12 @@ const EventItems= (props) => {
         <>
             {data.map(event =>
                 <tr key= {event.id}>
-                    <td>{event.Artist}</td> 
-                    <td>{event.Location}</td>
-                    <td>{event.Price}</td>
+                    <td>{event.artist}</td> 
+                    <td>{event.location}</td>
+                    <td>{event.price}</td>
+                    {/* <Button>Delete</Button> */}
                     </tr>
-                    
+
                 )}
         </>
       )
