@@ -1,6 +1,6 @@
 import './style/Footer.css';
 
-export const Footer = () => {
-    return <footer>EventListener &copy; {new Date().getFullYear().toString()}</footer>
+export const Footer = (props) => {
+    return <footer>{props.title} &copy; {props.date} </footer>
 
 }

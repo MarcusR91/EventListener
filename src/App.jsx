@@ -20,7 +20,7 @@ export const App = () => {
                     )}
             </Routes>
             {/* <StartPrototype  /> */}
-            <Footer />
+            <Footer title="EventListener" date = {new Date().getFullYear().toString()} />
         </div>
     )
 }

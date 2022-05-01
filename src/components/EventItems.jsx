@@ -2,33 +2,20 @@ import React, { useEffect, useState } from "react";
 import Button from "./utils/Button";
 import caller from "../API/Caller";
 import { CustomConfirm } from "./utils/CustomConfirm";
+import GetData from "../API/Get";
 
-const EventItems= (props) => {
+const EventItems = () => {
 
     const [data,setData] = useState([]);
 
-
-   function getEventData() {
-        caller.get('/events', {})
-        .then(res => {
-            const data = res.data;
-            
-            console.log(data);
-            setData(data);
-        })
-        .catch((error) =>{
-            console.error(error);
-        })
-    }
     useEffect(()=>{
-        getEventData();
+        GetData(setData);
     },[])
 
     async function onDelete(id) {
        await caller.delete(`/events/${id}`)
 
-        getEventData();
-
+       GetData(setData);
     }
 
     return (
@@ -40,13 +27,10 @@ const EventItems= (props) => {
                     <td>{event.location}</td>
                     <td>{event.price}</td>
                     <td> <Button onclick={() => CustomConfirm(() => onDelete(event.id))}>Delete</Button></td>
-                   
                     </tr>
-
                 )}
         </>
       )
-
 }
 
 export default EventItems;
