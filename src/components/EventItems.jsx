@@ -8,7 +8,7 @@ const EventItems= (props) => {
 
 
    function getEventData() {
-        caller.get('/1Y0gpL/data', {})
+        caller.get('/events', {})
         .then(res => {
             const data = res.data;
             
@@ -23,15 +23,23 @@ const EventItems= (props) => {
         getEventData();
     },[])
 
+    async function onDelete(id) {
+       await caller.delete(`/events/${id}`)
+
+        getEventData();
+
+    }
 
     return (
         <>
             {data.map(event =>
                 <tr key= {event.id}>
+                    <td>{event.id}</td>
                     <td>{event.artist}</td> 
                     <td>{event.location}</td>
                     <td>{event.price}</td>
-                    {/* <Button>Delete</Button> */}
+                    <td> <Button onclick={()=>onDelete(event.id)}>Delete</Button></td>
+                   
                     </tr>
 
                 )}

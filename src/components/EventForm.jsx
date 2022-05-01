@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {useNavigate} from 'react-router-dom';
 import './style/EventForm.css';
 import Button from './utils/Button';
 // import View from './View';
@@ -8,6 +8,7 @@ import caller from '../API/Caller';
 
 const EventForm = (props) => {
 
+    const navigate = useNavigate();
 
     // const getDatafromLS = () => {
     //     const data = localStorage.getItem('events');
@@ -23,7 +24,7 @@ const EventForm = (props) => {
     const [newEvent, setNewEvent] = useState({
         artist: '',
         location:'',
-        price: null
+        price: ""
     })
 
     // const [artist, setArtist] = useState('');
@@ -47,20 +48,19 @@ const EventForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
 
-        caller.post('/1Y0gpL/data',{
+        caller.post('/events',{
             artist: newEvent.artist,
             location: newEvent.location, 
             price: newEvent.price
         })
         .then(res => {
-
             const data = res.data;
 
             console.log(res.data)
             setNewEvent(data)
-            
-            
         })
+
+        navigate('/events')
 
         // let eventData = {
         //     artist,
@@ -114,9 +114,9 @@ const EventForm = (props) => {
                     <div className='form-button-container'>
                        <Button type = "submit" className = "form-button">Add Event</Button>
                     </div>
-                    <div className='stop-prototyp-container'>
+                    {/* <div className='stop-prototyp-container'>
                         <button className='stop-prototype' onClick={props.onCancel}>Stop Prototype</button>
-                    </div>
+                    </div> */}
                 </form>
                 {/* <EventList events={events} /> */}
                 

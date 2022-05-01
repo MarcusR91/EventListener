@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const caller = axios.create({
-    baseURL: 'https://retoolapi.dev/1Y0gpL/data'
+    baseURL: 'http://localhost:3000'
 })
 
 export default caller;
