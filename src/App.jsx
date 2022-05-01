@@ -19,7 +19,7 @@ export const App = () => {
                     <Route key = {route.path} path = {route.path} element = {<route.component />}/>
                     )}
             </Routes>
-            <StartPrototype  />
+            {/* <StartPrototype  /> */}
             <Footer />
         </div>
     )

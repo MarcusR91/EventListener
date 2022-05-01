@@ -1,7 +1,7 @@
 import EventItems from "./EventItems";
 import Button from "./utils/Button";
 
-const EventList = (props) => {
+const EventList = () => {
 
     return (
          <>
