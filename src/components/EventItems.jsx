@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "./utils/Button";
 import caller from "../API/Caller";
+import { CustomConfirm } from "./utils/CustomConfirm";
 
 const EventItems= (props) => {
 
@@ -38,7 +39,7 @@ const EventItems= (props) => {
                     <td>{event.artist}</td> 
                     <td>{event.location}</td>
                     <td>{event.price}</td>
-                    <td> <Button onclick={()=>onDelete(event.id)}>Delete</Button></td>
+                    <td> <Button onclick={() => CustomConfirm(() => onDelete(event.id))}>Delete</Button></td>
                    
                     </tr>
 
