@@ -1,3 +1,46 @@
 {
-  "events": []
+  "events": [
+    {
+      "artist": "Guns n Roses",
+      "location": "jk",
+      "price": "634",
+      "id": 3
+    },
+    {
+      "artist": "Guns n Roses",
+      "location": "Jönköping",
+      "price": "412",
+      "id": 5
+    },
+    {
+      "artist": "Linda",
+      "location": "Jönköping",
+      "price": "41",
+      "id": 6
+    },
+    {
+      "artist": "Linda",
+      "location": "Jönköping",
+      "price": "523",
+      "id": 7
+    },
+    {
+      "artist": "Marky",
+      "location": "jk",
+      "price": "5235",
+      "id": 8
+    },
+    {
+      "artist": "Marky",
+      "location": "Göteborg",
+      "price": "122",
+      "id": 9
+    },
+    {
+      "artist": "Bullet for my valentine",
+      "location": "Stockholm",
+      "price": "199",
+      "id": 10
+    }
+  ]
 }
