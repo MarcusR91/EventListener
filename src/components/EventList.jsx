@@ -15,7 +15,6 @@ const EventList = () => {
 
     return (
          <>
-            {/* {props.events.length > 0 && */}
             <SearchBar inputHandler = {inputHandler}/>
                     <table>
                         <thead>
@@ -31,7 +30,6 @@ const EventList = () => {
                     
                 {/* } */}
                 
-            {/* {props.events.length < 1 && <p>No events added</p>} */}
             </>
         
     )
