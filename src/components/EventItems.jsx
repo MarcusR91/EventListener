@@ -4,6 +4,7 @@ import caller from "../API/Caller";
 import { CustomConfirm } from "./utils/CustomConfirm";
 import GetData from "../API/Get";
 import SearchBar from "./SearchBar";
+import "./style/EventTable.css"
 
 const EventItems = (props) => {
 
@@ -37,7 +38,7 @@ const EventItems = (props) => {
                     <td>{event.artist}</td> 
                     <td>{event.location}</td>
                     <td>{event.price}</td>
-                    <td> <Button onclick={() => CustomConfirm(() => onDelete(event.id))}>Delete</Button></td>
+                    <td> <Button className="button-delete" onclick={() => CustomConfirm(() => onDelete(event.id))}>Delete</Button></td>
                     </tr>
                 )}
                

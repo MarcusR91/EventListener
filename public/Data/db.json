@@ -1,18 +1,6 @@
 {
   "events": [
     {
-      "artist": "Guns n Roses",
-      "location": "jk",
-      "price": "634",
-      "id": 3
-    },
-    {
-      "artist": "Guns n Roses",
-      "location": "Jönköping",
-      "price": "412",
-      "id": 5
-    },
-    {
       "artist": "Linda",
       "location": "Jönköping",
       "price": "41",
@@ -35,6 +23,12 @@
       "location": "Stockholm",
       "price": "199",
       "id": 10
+    },
+    {
+      "artist": "Linda",
+      "location": "jk",
+      "price": "199",
+      "id": 11
     }
   ]
 }

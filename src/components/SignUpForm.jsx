@@ -15,19 +15,19 @@ const SignUpForm = () => {
 
 
     return(
-        <div>
+        <div className='signup-form-container'>
         <form onSubmit={submitHandler}>
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
             <hr />
 
-            <label>Email</label>
+            <label className='signup-form-label'>Email</label>
             <input type="text" placeholder="Enter emali" required/>
 
-            <label>Password</label>
+            <label className='signup-form-label'>Password</label>
             <input type="password" placeholder="Enter password" required/>
 
-            <Button type = "submit" className = "form-button">Sign up</Button>
+            <Button type = "submit" className = "signup-form-button">Sign up</Button>
         </form>
         </div>
     )
