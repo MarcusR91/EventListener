@@ -1,7 +1,7 @@
 import React from "react";
 import './style/Header.css';
 
-const Header = (props) => {
+const Header = () => {
 
     return <h1 className="header">EventListener</h1>
 }
