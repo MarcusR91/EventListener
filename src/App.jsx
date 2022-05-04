@@ -13,14 +13,18 @@ import { routes } from "./components/Nav/route-config.js";
 export const App = () => {
     return (
         <div>
-            <NavBar />
-            <Routes>
+            <div className="background-image">
+                <NavBar />
+
+                <Routes>
                 {routes.map(route =>
                     <Route key = {route.path} path = {route.path} element = {<route.component />}/>
                     )}
             </Routes>
             {/* <StartPrototype  /> */}
             <Footer title="EventListener" date = {new Date().getFullYear().toString()} />
+            </div>
+            
         </div>
     )
 }

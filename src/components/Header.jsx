@@ -3,7 +3,7 @@ import './style/Header.css';
 
 const Header = () => {
 
-    return <h1 className="header">EventListener</h1>
+    return <h1 className="header">Event<span>Listener</span></h1>
 }
 
 export default Header;

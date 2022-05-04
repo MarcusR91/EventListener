@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import EventItems from "./EventItems";
 import SearchBar from "./SearchBar";
+import "./style/EventTable.css"
 import Button from "./utils/Button";
 
 const EventList = () => {
@@ -14,8 +15,8 @@ const EventList = () => {
     }
 
     return (
-         <>
-            <SearchBar inputHandler = {inputHandler}/>
+         <div className='table-container'>
+            <SearchBar className="searchbar" inputHandler = {inputHandler}/>
                     <table>
                         <thead>
                             <tr>
@@ -26,11 +27,8 @@ const EventList = () => {
                         </thead>
                         
                         <EventItems input = {inputText} />
-                    </table>
-                    
-                {/* } */}
-                
-            </>
+                    </table> 
+                </div>
         
     )
 }
