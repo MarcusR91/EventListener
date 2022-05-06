@@ -5,6 +5,7 @@ import { CustomConfirm } from "./utils/CustomConfirm";
 import GetData from "../API/Get";
 import SearchBar from "./SearchBar";
 import "./style/EventTable.css"
+import DeleteEventData from "../API/Delete";
 
 const EventItems = (props) => {
 
@@ -17,10 +18,10 @@ const EventItems = (props) => {
 
 
 
-    async function onDelete(id) {
-       await caller.delete(`/events/${id}`)
-
-       GetData(setData);
+      function onDelete(id) {
+        GetData(setData);
+        DeleteEventData(id);
+        GetData(setData);
     }
 
     const filteredData = data.filter((event) =>{
