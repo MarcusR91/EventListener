@@ -2,7 +2,7 @@ import EventForm from "../EventForm";
 import EventList from "../EventList";
 import { Home } from "../Home";
 import Contact from "../Contact"
-import SignUpForm from "../SignUpForm";
+import AuthForm from "../AuthForm";
 import MessageToUser from "../utils/MessageToUser";
 
 
@@ -25,7 +25,7 @@ export const routes = [
     },
     {
         path: '/signup',
-        component: SignUpForm
+        component: AuthForm
     },
     {
         path: '/message',
