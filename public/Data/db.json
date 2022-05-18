@@ -1,16 +1,3 @@
 {
-  "events": [
-    {
-      "artist": "Guns n Roses",
-      "location": "Stockholm",
-      "price": "199",
-      "id": 1
-    },
-    {
-      "artist": "Marky",
-      "location": "Jönköping",
-      "price": "499",
-      "id": 2
-    }
-  ]
+  "events": []
 }

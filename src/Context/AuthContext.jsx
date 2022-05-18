@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import propTypes from 'prop-types';
 
 const AuthContext = React.createContext({
     token: '',
@@ -31,6 +32,10 @@ export const AuthContextProvider = (props) => {
     return <AuthContext.Provider value={contextValue}>
         {props.children}
     </AuthContext.Provider>
+}
+
+AuthContextProvider.propTypes = {
+    children: propTypes.element
 }
 
 export default AuthContext;

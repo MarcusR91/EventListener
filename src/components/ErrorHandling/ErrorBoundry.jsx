@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types";
 
 class ErrorBoundry extends React.Component
 {
@@ -26,6 +27,10 @@ class ErrorBoundry extends React.Component
             return this.props.children;
         }
     }
+}
+
+ErrorBoundry.propTypes = {
+    errorUI: propTypes.element
 }
 
 export default ErrorBoundry;
