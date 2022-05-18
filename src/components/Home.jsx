@@ -1,6 +1,7 @@
 
 
 export function Home () {
+
     return(
         <>
         <h1 style={{color:"white", textAlign:"center", marginTop:"150px"}}>Event<span>Listener</span></h1>

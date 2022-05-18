@@ -1,17 +1,25 @@
-import {NavLink} from 'react-router-dom';
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import AuthContext from '../../Context/AuthContext';
 import Header from '../Header';
 import "../style/NavBar.css"
 
 
-export function NavBar () {
+export function NavBar() {
 
-    return(
+    const AuthCtx = useContext(AuthContext);
+
+    const isLoggedIn = AuthCtx.isLoggedIn;
+
+    return (
         <nav>
-             <NavLink className="logo" to='/'><Header /></NavLink>
+            <NavLink className="logo" to='/'><Header /></NavLink>
             <ul>
-                <li>
-                    <NavLink className="links" to='/addEvent'>Add Event</NavLink>
-                </li>
+                {isLoggedIn && (
+                    <li>
+                        <NavLink className="links" to='/addEvent'>Add Event</NavLink>
+                    </li>
+                )}
                 <li>
                     <NavLink className="links" to='/events'>Events</NavLink>
                 </li>
@@ -19,9 +27,14 @@ export function NavBar () {
                     <NavLink className="links" to='/contact'>Contact</NavLink>
                 </li>
             </ul>
-            <button>
+            {!isLoggedIn && (
+                <button>
                     <NavLink className="button-link" to='/signup'>Sign up</NavLink>
                 </button>
+            )}
+            {isLoggedIn && (<button>Logout</button>
+            )}
+
         </nav>
     )
 }
