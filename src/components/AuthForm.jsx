@@ -1,13 +1,16 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import './style/AuthForm.css';
 import {useNavigate} from 'react-router-dom';
 import Button from './utils/Button';
 import axios from 'axios';
+import AuthContext from '../Context/AuthContext';
 
 
 const AuthForm = () => {
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
+
+    const AuthCtx = useContext(AuthContext);
 
     const [isLogin, setIsLogin] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
@@ -58,7 +61,8 @@ const AuthForm = () => {
             });
           }
         }).then(data => {
-            console.log(data);
+            AuthCtx.login(data.idToken)
+            console.log(data)
         }).catch((err) => {
             alert(err.message);
         });
