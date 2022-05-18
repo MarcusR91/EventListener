@@ -12,7 +12,7 @@ export function CustomConfirm (onConfirm, title, confirmButtonText){
         icon: "warning", 
         showCancelButton: true, 
         confirmButtonColor: "#3085d6", 
-        canelButtonColor: "#d33"
+        cancelButtonColor: "#d33"
 
     })
     .then(result=>{
