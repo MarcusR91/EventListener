@@ -25,7 +25,7 @@ const EventItems = (props) => {
 
       async function onDelete(id) {
           await DeleteEventData(id);
-          GetData(setData);
+          await GetData(setData);
         // GetData(setData);
     }
 

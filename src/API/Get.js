@@ -1,16 +1,29 @@
 import caller from "./Caller";
 
-function GetData (setData) {
-    caller.get('/events', {})
-    .then(res => {
-        const data = res.data;
+async function GetData (setData) {
+    try{
+        const response = await caller.get('/events', {})
+
+        const data = response.data
+        await setData(data);
+
+    return data;
+    }
+    catch{
+        alert("Failed to fetch the data")
+    }
+    
+
+
+    // .then(res => {
+    //     const data = res.data;
         
-        console.log(data);
-        setData(data);
-    })
-    .catch((error) =>{
-        console.error(error);
-    })
+    //     console.log(data);
+       
+    // })
+    // .catch((error) =>{
+    //     console.error(error);
+    // })
 }
 
 export default GetData;

@@ -38,7 +38,12 @@ export const authenticateUser = (isLogin, enteredEmail, enteredPassword, AuthCtx
         AuthCtx.login(data.idToken)
         console.log(data)
     }).catch((err) => {
-        alert(err.message);
+        if(email != null){
+            alert(`${enteredEmail} already exists!`)
+        }else{
+            alert(err.message);
+        }
+       
     });
 }
 

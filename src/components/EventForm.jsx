@@ -16,14 +16,14 @@ const EventForm = () => {
         price: ""
     })
 
-    const submitHandler = (event) => {
+     const submitHandler = async (event) => {
         event.preventDefault();
 
-        PostData(newEvent,setNewEvent);
+       await  PostData(newEvent,setNewEvent);
         navigate('/events')
     }
 
-    function handle(e){
+     function handle(e){
         const newData = {...newEvent}
         newData[e.target.id] = e.target.value;
         setNewEvent(newData);
