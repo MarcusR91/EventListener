@@ -45,7 +45,7 @@ const EventItems = (props) => {
                     <td>{event.location}</td>
                     <td>{event.price}</td>
                     {isLoggedIn && (
-                    <td> <Button className="button-delete" onclick={() => CustomConfirm(() => onDelete(event.id))}>Delete</Button></td>
+                    <td> <Button className="button-delete" onClick={() => CustomConfirm(() => onDelete(event.id))}>Delete</Button></td>
                     )} 
                     </tr>
                 )}
