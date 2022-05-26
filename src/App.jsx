@@ -1,9 +1,6 @@
-import React, {useState} from "react";
-import Header from "./components/Header.jsx";
-import { Footer } from "./components/Footer.jsx";
+import React from "react";
+import { Footer } from "./components/Shared/Footer.jsx";
 import './App.css';
-import StartPrototype from "./components/StartPrototype.jsx";
-import EventList from "./components/EventList.jsx";
 import { NavBar } from "./components/Nav/NavBar.jsx";
 import { Routes, Route } from "react-router-dom";
 import { routes } from "./components/Nav/route-config.js";

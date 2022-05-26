@@ -1,10 +1,10 @@
 import { useState, useRef, useContext } from 'react';
 import './style/AuthForm.css';
 import {useNavigate} from 'react-router-dom';
-import Button from './utils/Button';
+import Button from '../utils/Button';
 import axios from 'axios';
-import AuthContext from '../Context/AuthContext';
-import { authenticateUser } from '../API/auth/auth-function';
+import AuthContext from '../../Context/AuthContext';
+import { authenticateUser } from '../../API/auth/auth-function';
 
 
 const AuthForm = () => {

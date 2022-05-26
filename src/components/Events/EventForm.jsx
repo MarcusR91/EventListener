@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import './style/EventForm.css';
-import Button from './utils/Button';
-import PostData from '../API/Post';
+import Button from '../utils/Button';
+import PostData from '../../API/Post';
 
 
 

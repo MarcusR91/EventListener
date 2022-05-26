@@ -1,8 +1,8 @@
-import EventForm from "../EventForm";
-import EventList from "../EventList";
-import { Home } from "../Home";
-import Contact from "../Contact"
-import AuthForm from "../AuthForm";
+import EventForm from "../Events/EventForm";
+import EventList from "../Events/EventList";
+import { Home } from "../Pages/Home";
+import Contact from "../Pages/Contact"
+import AuthForm from "../Auth/AuthForm";
 import MessageToUser from "../utils/MessageToUser";
 
 

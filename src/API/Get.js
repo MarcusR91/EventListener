@@ -1,3 +1,4 @@
+import React from 'react';
 import caller from "./Caller";
 
 async function GetData (setData) {

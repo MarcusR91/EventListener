@@ -4,6 +4,7 @@ import propTypes from "prop-types";
 
 const SearchBar = (props) => {
 
+
     return (
     
        <>

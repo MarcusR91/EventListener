@@ -4,18 +4,6 @@
       "artist": "Guns n Roses",
       "location": "Jönköping",
       "price": "421",
-      "id": 2
-    },
-    {
-      "artist": "Guns n Roses",
-      "location": "Jönköping",
-      "price": "432",
-      "id": 4
-    },
-    {
-      "artist": "Guns n Roses",
-      "location": "Jönköping",
-      "price": "421",
       "id": 5
     },
     {
@@ -23,6 +11,18 @@
       "location": "Stockholm",
       "price": "412",
       "id": 6
+    },
+    {
+      "artist": "Guns n Roses",
+      "location": "Jönköping",
+      "price": "41241",
+      "id": 7
+    },
+    {
+      "artist": "Guns n Roses",
+      "location": "jk",
+      "price": "42141",
+      "id": 8
     }
   ]
 }

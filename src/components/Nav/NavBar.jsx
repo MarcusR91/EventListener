@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import AuthContext from '../../Context/AuthContext';
-import Header from '../Header';
-import "../style/NavBar.css"
+import Header from '../Shared/Header';
+import "./style/NavBar.css"
 
 
 export function NavBar() {
@@ -10,6 +10,10 @@ export function NavBar() {
     const AuthCtx = useContext(AuthContext);
 
     const isLoggedIn = AuthCtx.isLoggedIn;
+
+    logoutHandler = () => {
+        AuthCtx.logout();
+    }
 
     return (
         <nav>
@@ -32,7 +36,7 @@ export function NavBar() {
                     <NavLink className="button-link" to='/signup'>Sign up</NavLink>
                 </button>
             )}
-            {isLoggedIn && (<button>Logout</button>
+            {isLoggedIn && (<button onClick={logoutHandler}>Logout</button>
             )}
 
         </nav>

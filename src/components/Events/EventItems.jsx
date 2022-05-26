@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
-import Button from "./utils/Button";
-import caller from "../API/Caller";
-import { CustomConfirm } from "./utils/CustomConfirm";
-import GetData from "../API/Get";
-import SearchBar from "./SearchBar";
+import Button from "../utils/Button";
+import { CustomConfirm } from "../utils/CustomConfirm";
+import GetData from "../../API/Get";
 import "./style/EventTable.css"
-import DeleteEventData from "../API/Delete";
+import DeleteEventData from "../../API/Delete";
 import propTypes from "prop-types";
-import AuthContext from '../Context/AuthContext';
+import AuthContext from '../../Context/AuthContext';
 
 const EventItems = (props) => {
 

@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-
 import EventItems from "./EventItems";
-import SearchBar from "./SearchBar";
+import SearchBar from "../utils/SearchBar";
 import "./style/EventTable.css"
-import Button from "./utils/Button";
+
 
 const EventList = () => {
 
