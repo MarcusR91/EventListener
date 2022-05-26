@@ -3,7 +3,7 @@ import Button from "../utils/Button";
 import { CustomConfirm } from "../utils/CustomConfirm";
 import GetData from "../../API/Get";
 import "./style/EventTable.css"
-import DeleteEventData from "../../API/Delete";
+import DeleteData from "../../API/Delete";
 import propTypes from "prop-types";
 import AuthContext from '../../Context/AuthContext';
 
@@ -14,16 +14,17 @@ const EventItems = (props) => {
     const AuthCtx = useContext(AuthContext);
 
     const isLoggedIn = AuthCtx.isLoggedIn;
+    const url = "events";
 
     useEffect(()=>{
-        GetData(setData);
+        GetData(url, setData);
     },[])
 
 
 
       async function onDelete(id) {
-          await DeleteEventData(id);
-          await GetData(setData);
+          await DeleteData("events",id);
+          await GetData(url, setData);
         // GetData(setData);
     }
 

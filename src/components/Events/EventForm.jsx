@@ -19,7 +19,7 @@ const EventForm = () => {
      const submitHandler = async (event) => {
         event.preventDefault();
 
-       await  PostData(newEvent,setNewEvent);
+        await PostData("events", newEvent,setNewEvent);
         navigate('/events')
     }
 

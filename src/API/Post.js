@@ -1,8 +1,8 @@
 import caller from "./Caller";
 
-async function  PostData(newEvent,setNewEvent) {
+async function  PostData(url, newEvent,setNewEvent) {
     try{
-        const response = await caller.post('/events',{
+        const response = await caller.post( `/${url}`,{
             artist: newEvent.artist,
             location: newEvent.location, 
             price: newEvent.price

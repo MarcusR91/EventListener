@@ -1,9 +1,9 @@
 import React from 'react';
 import caller from "./Caller";
 
-async function GetData (setData) {
+async function GetData (url, setData) {
     try{
-        const response = await caller.get('/events', {})
+        const response = await caller.get( `/${url}`, {})
 
         const data = response.data
         await setData(data);
