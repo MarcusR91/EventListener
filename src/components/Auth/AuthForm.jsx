@@ -5,9 +5,11 @@ import Button from '../utils/Button';
 import axios from 'axios';
 import AuthContext from '../../Context/AuthContext';
 import { authenticateUser } from '../../API/auth/auth-function';
+import {useNavigate} from 'react-router-dom';
 
 
 const AuthForm = () => {
+  const navigate = useNavigate();
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
 
@@ -31,6 +33,8 @@ const AuthForm = () => {
     
         setIsLoading(true);
        authenticateUser(isLogin, enteredEmail,enteredPassword, AuthCtx ,setIsLoading);
+
+       navigate('/')
       };
 
 

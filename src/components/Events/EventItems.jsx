@@ -17,13 +17,13 @@ const EventItems = (props) => {
     const url = "events";
 
     useEffect(()=>{
-        GetData(url, setData);
+        GetData(url, setData ,"Could not load events, try again later");
     },[])
 
 
 
       async function onDelete(id) {
-          await DeleteData("events",id);
+          await DeleteData(url ,id, "failed to delete the event,try again later");
           await GetData(url, setData);
         // GetData(setData);
     }

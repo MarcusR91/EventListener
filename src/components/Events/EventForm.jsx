@@ -19,7 +19,7 @@ const EventForm = () => {
      const submitHandler = async (event) => {
         event.preventDefault();
 
-        await PostData("events", newEvent,setNewEvent);
+        await PostData("events", newEvent,setNewEvent, "Failed to add event, try again later");
         navigate('/events')
     }
 

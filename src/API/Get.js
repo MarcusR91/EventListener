@@ -1,7 +1,7 @@
 import React from 'react';
 import caller from "./Caller";
 
-async function GetData (url, setData) {
+async function GetData (url, setData, error) {
     try{
         const response = await caller.get( `/${url}`, {})
 
@@ -11,7 +11,7 @@ async function GetData (url, setData) {
     return data;
     }
     catch{
-        alert("Failed to fetch the data")
+        alert(error)
     }
     
 

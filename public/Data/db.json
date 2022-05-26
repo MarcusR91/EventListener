@@ -11,6 +11,12 @@
       "location": "New York",
       "price": "5234",
       "id": 8
+    },
+    {
+      "artist": "Guns n Roses",
+      "location": "Jönköping",
+      "price": "421",
+      "id": 9
     }
   ]
 }

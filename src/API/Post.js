@@ -1,6 +1,6 @@
 import caller from "./Caller";
 
-async function  PostData(url, newEvent,setNewEvent) {
+async function  PostData(url, newEvent,setNewEvent, error) {
     try{
         const response = await caller.post( `/${url}`,{
             artist: newEvent.artist,
@@ -14,7 +14,7 @@ async function  PostData(url, newEvent,setNewEvent) {
         return data
     }
     catch{
-        alert("Failed to add event")
+        alert(error)
     }
         
         // .then(res => {
